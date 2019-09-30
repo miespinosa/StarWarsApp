@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { PersonajesComponent } from './components/personajes/personajes.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
+import { PlanetasComponent } from './components/planetas/planetas.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
     HomeComponent,
     NavbarComponent,
     PersonajesComponent,
-    PeliculasComponent
+    PeliculasComponent,
+    PlanetasComponent
   ],
   imports: [
     BrowserModule
