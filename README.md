@@ -29,6 +29,7 @@ El objetivo principal de este proyecto es desarrollar una aplicación web
 * _MICHAEL ALEXANDER ESPINOSA RICO_ - 1821981046
 * _DARWISON ORJUELA VALLEJO_        - 1911028061
 * _JORGE ENRIQUE FORIGUA LOPEZ_     - 1221960110
+* _JHORMAN REY MENDEZ_              - 1711026625
 
 * * * 
 
