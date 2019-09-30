@@ -10,14 +10,19 @@
  dicha saga de películas, basados en el API expuesto. 
 </p>
 
+* * * 
 
 ## Objetivo
 
-```bash
+<p>
 El objetivo principal de este proyecto es desarrollar una aplicación web 
  basados en angular y bootstrap que permita una buena experiencia de usuario 
  al mostrar datos provenientes del API  [swapi](http://swapi.co/api)
-```
+</p>
+
+
+* * * * 
+
 
 ## Integrantes
 
