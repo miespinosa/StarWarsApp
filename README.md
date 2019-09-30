@@ -17,8 +17,8 @@
 <p>
 El objetivo principal de este proyecto es desarrollar una aplicación web 
  basados en angular y bootstrap que permita una buena experiencia de usuario 
- al mostrar datos provenientes del API  [swapi](http://swapi.co/api)
-</p>
+ al mostrar datos provenientes del API </p> [swapi](http://swapi.co/api/)
+
 
 
 * * * * 
