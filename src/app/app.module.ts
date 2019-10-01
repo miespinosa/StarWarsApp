@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -8,6 +12,12 @@ import { PersonajesComponent } from './components/personajes/personajes.componen
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PlanetasComponent } from './components/planetas/planetas.component';
 
+// Importar Rutas
+import { ROUTES } from './app.routes';
+import { NavesComponent } from './components/naves/naves.component';
+import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
+import { EspeciesComponent } from './components/especies/especies.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,10 +25,15 @@ import { PlanetasComponent } from './components/planetas/planetas.component';
     NavbarComponent,
     PersonajesComponent,
     PeliculasComponent,
-    PlanetasComponent
+    PlanetasComponent,
+    NavesComponent,
+    VehiculosComponent,
+    EspeciesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
