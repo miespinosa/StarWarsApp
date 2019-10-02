@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwapiService } from '../../services/swapi.service';
 
 @Component({
   selector: 'app-personajes',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonajesComponent implements OnInit {
 
-  constructor() { }
+  constructor( private swapi: SwapiService) {
+    this.swapi.getPeople();
+  }
 
   ngOnInit() {
   }
