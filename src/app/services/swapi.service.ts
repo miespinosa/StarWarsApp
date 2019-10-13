@@ -14,4 +14,7 @@ export class SwapiService {
   getPeople() {
     return this.http.get('https://swapi.co/api/people/');
   }
+  getPlanet() {
+    return this.http.get('https://swapi.co/api/planets/');
+  }
 }
