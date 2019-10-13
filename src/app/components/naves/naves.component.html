@@ -1,10 +1,15 @@
-<p>naves</p>
 <div class="card-columns">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title that wraps to a new line</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
+  <div *ngFor="let nave of naves; let i=index" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ nave.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Características de la nave</h6>
+      <p class="card-text">
+         <span>Modelo: {{ nave.model }} </span><br>
+         <span>Fabricado por: {{ nave.manufacturer }} </span><br>
+         <span>Pasajeros: {{ nave.passengers }} </span><br>
+         <span>Consumibles: {{ nave.consumables }} </span>
+      </p>
     </div>
-    
   </div>
+  
+</div>
