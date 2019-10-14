@@ -8,8 +8,7 @@ import { SwapiService } from '../../services/swapi.service';
 })
 export class PeliculasComponent implements OnInit {
 
-  constructor( private swapi: SwapiService) {
-    this.swapi.getPeople();
+  constructor() {
   }
 
   ngOnInit() {
