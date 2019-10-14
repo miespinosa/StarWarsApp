@@ -1,8 +1,14 @@
 <div class="card-columns">
-  <div class="card">
+  <div *ngFor="let personaje of personajes; let i=index" class="card">
     <div class="card-body">
-      <h5 class="card-title">Card title that wraps to a new line</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h5 class="card-title">{{ personaje.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Características del personaje</h6>
+      <p class="card-text">
+         <span>Altura: {{ personaje.height }} cms</span><br>
+         <span>Masa Corporal: {{ personaje.mass }} kg</span><br>
+         <span>Color de cabello: {{ personaje.hair_color }} </span><br>
+         <span>Color de Piel: {{ personaje.skin_color }} </span>
+      </p>
     </div>
   </div>
   

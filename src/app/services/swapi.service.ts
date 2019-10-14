@@ -12,9 +12,6 @@ export class SwapiService {
 
 
   getPeople() {
-    this.http.get('https://swapi.co/api/people/')
-        .subscribe(data => {
-          console.log(data);
-        });
+    return this.http.get('https://swapi.co/api/people/');
   }
 }
