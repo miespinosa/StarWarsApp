@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SwapiService } from '../../services/swapi.service';
 @Component({
   selector: 'app-naves',
   templateUrl: './naves.component.html',
@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavesComponent implements OnInit {
 
-  constructor() { }
+  naves: any[] = [];
+  constructor( private swapi: SwapiService) {
+    this.swapi.getStarship()
+      .subscribe( (data: any) => {
+        console.log(data.results);
+        this.naves = data.results;
+      });
+  }
 
   ngOnInit() {
   }

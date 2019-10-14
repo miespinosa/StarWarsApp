@@ -17,4 +17,7 @@ export class SwapiService {
   getVehicle() {
     return this.http.get('https://swapi.co/api/vehicles/');
   }
+  getStarship() {
+    return this.http.get('https://swapi.co/api/starships/');
+  }
 }
