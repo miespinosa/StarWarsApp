@@ -8,11 +8,19 @@ import { SwapiService } from '../../services/swapi.service';
 export class VehiculosComponent implements OnInit {
 
   vehiculos: any[] = [];
+  loading: boolean;
   constructor( private swapi: SwapiService) {
+    this.loading = true;
     this.swapi.getCall('vehicles')
-      .subscribe( data => {
+      .subscribe( (data: any) => {
+        console.log(data);
         this.vehiculos = data;
+        this.loading = false;
       });
+  }
+
+  verPersonaje(item: any) {
+    console.log(item);
   }
 
   ngOnInit() {
