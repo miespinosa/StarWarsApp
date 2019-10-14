@@ -1,10 +1,15 @@
-<p>vehiculos.</p>
 <div class="card-columns">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title that wraps to a new line</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
+  <div *ngFor="let vehiculo of vehiculos; let i=index" class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ vehiculo.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Características del vehiculo</h6>
+      <p class="card-text">
+         <span>Modelo: {{ vehiculo.model }} </span><br>
+         <span>Fabricado por: {{ vehiculo.manufacturer }} </span><br>
+         <span>Costo en creditos: {{ vehiculo.cost_in_credits }} </span><br>
+         <span>Pasajeros: {{ vehiculo.passengers }} </span>
+      </p>
     </div>
-    
   </div>
+  
+</div>
