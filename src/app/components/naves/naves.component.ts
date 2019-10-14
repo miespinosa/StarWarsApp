@@ -9,10 +9,9 @@ export class NavesComponent implements OnInit {
 
   naves: any[] = [];
   constructor( private swapi: SwapiService) {
-    this.swapi.getStarship()
+    this.swapi.getCall('starships')
       .subscribe( (data: any) => {
-        console.log(data.results);
-        this.naves = data.results;
+        this.naves = data;
       });
   }
 

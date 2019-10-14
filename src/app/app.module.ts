@@ -16,6 +16,8 @@ import { ROUTES } from './app.routes';
 import { NavesComponent } from './components/naves/naves.component';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { EspeciesComponent } from './components/especies/especies.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { SearchComponent } from './components/shared/search/search.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { EspeciesComponent } from './components/especies/especies.component';
     PlanetasComponent,
     NavesComponent,
     VehiculosComponent,
-    EspeciesComponent
+    EspeciesComponent,
+    LoadingComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

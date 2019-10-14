@@ -9,10 +9,9 @@ export class VehiculosComponent implements OnInit {
 
   vehiculos: any[] = [];
   constructor( private swapi: SwapiService) {
-    this.swapi.getVehicle()
-      .subscribe( (data: any) => {
-        console.log(data.results);
-        this.vehiculos = data.results;
+    this.swapi.getCall('vehicles')
+      .subscribe( data => {
+        this.vehiculos = data;
       });
   }
 

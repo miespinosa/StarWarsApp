@@ -1,18 +1,20 @@
-<h2>
- PLANETAS
-</h2> 
-<div class="card-columns">
-  <div *ngFor="let planeta of planetas; let i=index" class="card">
-    <div class="card-body">
-      <h5 class="card-title">{{ planeta.name }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Características del planeta</h6>
-      <p class="card-text">
-          <span>Periodo de Rotacion: {{ planeta.rotation_period }} Horas</span><br>
-          <span>Periodo de Orbita: {{ planeta.orbital_period }} Horas</span><br>
-          <span>Diametro: {{ planeta.diameter }} Km</span><br>
-          <span>Clima: {{ planeta.climate }} </span>
-          <span>Gravedad: {{ planeta.gravity }} </span>
-      </p>
+<div class="row">
+  <div class="col">
+    <p class="h1">PLANETAS</p>
+  </div>
+  <div class="card-columns m-5">
+    <div *ngFor="let planeta of planetas; let i=index" class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ planeta.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Características del planeta</h6>
+        <p class="card-text">
+            <span>Periodo de Rotacion: {{ planeta.rotation_period }} Horas</span><br>
+            <span>Periodo de Orbita: {{ planeta.orbital_period }} Horas</span><br>
+            <span>Diametro: {{ planeta.diameter }} Km</span><br>
+            <span>Clima: {{ planeta.climate }} </span>
+            <span>Gravedad: {{ planeta.gravity }} </span>
+        </p>
+      </div>
     </div>
   </div>
 </div>

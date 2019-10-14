@@ -9,11 +9,10 @@ import { SwapiService } from '../../services/swapi.service';
 export class PlanetasComponent implements OnInit {
 
   planetas: any[] = [];
-  constructor(private swapi: SwapiService) { 
-    this.swapi.getPlanet()
+  constructor(private swapi: SwapiService) {
+    this.swapi.getCall('planets')
       .subscribe( (data: any) => {
-        console.log(data.results);
-        this.planetas = data.results;
+        this.planetas = data;
       });
   }
 

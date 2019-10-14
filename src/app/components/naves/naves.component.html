@@ -1,15 +1,19 @@
-<div class="card-columns">
-  <div *ngFor="let nave of naves; let i=index" class="card">
-    <div class="card-body">
-      <h5 class="card-title">{{ nave.name }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Características de la nave</h6>
-      <p class="card-text">
-         <span>Modelo: {{ nave.model }} </span><br>
-         <span>Fabricado por: {{ nave.manufacturer }} </span><br>
-         <span>Pasajeros: {{ nave.passengers }} </span><br>
-         <span>Consumibles: {{ nave.consumables }} </span>
-      </p>
+<div class="row">
+  <div class="col">
+    <p class="h1">NAVES</p>
+  </div>
+  <div class="card-columns m-5">
+    <div *ngFor="let nave of naves; let i=index" class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ nave.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Características de la nave</h6>
+        <p class="card-text">
+          <span>Modelo: {{ nave.model }} </span><br>
+          <span>Fabricado por: {{ nave.manufacturer }} </span><br>
+          <span>Pasajeros: {{ nave.passengers }} </span><br>
+          <span>Consumibles: {{ nave.consumables }} </span>
+        </p>
+      </div>
     </div>
   </div>
-  
 </div>

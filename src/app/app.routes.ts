@@ -6,11 +6,13 @@ import { PlanetasComponent } from './components/planetas/planetas.component';
 import { NavesComponent } from './components/naves/naves.component';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { EspeciesComponent } from './components/especies/especies.component';
+import { SearchComponent } from './components/shared/search/search.component';
 
 
 export const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'personajes', component: PersonajesComponent },
+    { path: 'search/:url', component: SearchComponent },
     { path: 'peliculas', component: PeliculasComponent },
     { path: 'naves', component: NavesComponent },
     { path: 'vehiculos', component: VehiculosComponent },

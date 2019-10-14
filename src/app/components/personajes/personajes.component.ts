@@ -9,12 +9,19 @@ import { SwapiService } from '../../services/swapi.service';
 export class PersonajesComponent implements OnInit {
 
   personajes: any[] = [];
+  loading: boolean;
   constructor( private swapi: SwapiService) {
-    this.swapi.getPeople()
+    this.loading = true;
+    this.swapi.getCall('people')
       .subscribe( (data: any) => {
-        console.log(data.results);
-        this.personajes = data.results;
+        console.log(data);
+        this.personajes = data;
+        this.loading = false;
       });
+  }
+
+  verPersonaje(item: any) {
+    console.log(item);
   }
 
   ngOnInit() {
