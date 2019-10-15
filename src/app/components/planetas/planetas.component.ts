@@ -6,23 +6,52 @@ import { SwapiService } from '../../services/swapi.service';
   templateUrl: './planetas.component.html',
   styles: []
 })
-export class PlanetasComponent implements OnInit {
+export class PlanetasComponent {
 
   planetas: any[] = [];
   loading: boolean;
+  nextUrl: string;
+  previousUrl: string;
+
   constructor(private swapi: SwapiService) {
     this.loading = true;
     this.swapi.getCall('planets/')
       .subscribe( (data: any) => {
         console.log(data);
-        this.planetas = data;
+        this.planetas = data['results'];
         this.loading = false;
+        this.nextUrl = data['next'];
+        this.previousUrl = data['previous'];
       });
   }
-  verPlaneta(item: any) {
-    console.log(item);
-  } 
-  ngOnInit() {
+
+  nextPage() {
+    if (this.nextUrl !== '') {
+      console.log(this.nextUrl);
+      this.loading = true;
+      this.swapi.getNewCall(this.nextUrl)
+        .subscribe( (data: any) => {
+          console.log(data);
+          this.planetas = data['results'];
+          this.nextUrl = data['next'];
+          this.previousUrl = data['previous'];
+          this.loading = false;
+        });
+    }
+  }
+
+  previousPage() {
+    if (this.previousUrl !== '') {
+      this.loading = true;
+      this.swapi.getNewCall(this.previousUrl)
+        .subscribe( (data: any) => {
+          console.log(data);
+          this.planetas = data['results'];
+          this.nextUrl = data['next'];
+          this.previousUrl = data['previous'];
+          this.loading = false;
+        });
+    }
   }
 
 }
