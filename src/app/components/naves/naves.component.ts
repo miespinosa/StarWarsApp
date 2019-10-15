@@ -15,7 +15,7 @@ export class NavesComponent {
 
   constructor( private swapi: SwapiService) {
     this.loading = true;
-    this.swapi.getCall('starships')
+    this.swapi.getCall('starships/')
       .subscribe( (data: any) => {
         console.log(data);
         this.naves = data;
