@@ -12,7 +12,7 @@ export class PlanetasComponent implements OnInit {
   loading: boolean;
   constructor(private swapi: SwapiService) {
     this.loading = true;
-    this.swapi.getCall('planets')
+    this.swapi.getCall('planets/')
       .subscribe( (data: any) => {
         console.log(data);
         this.planetas = data;

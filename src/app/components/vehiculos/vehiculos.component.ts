@@ -11,7 +11,7 @@ export class VehiculosComponent implements OnInit {
   loading: boolean;
   constructor( private swapi: SwapiService) {
     this.loading = true;
-    this.swapi.getCall('vehicles')
+    this.swapi.getCall('vehicles/')
       .subscribe( (data: any) => {
         console.log(data);
         this.vehiculos = data;
