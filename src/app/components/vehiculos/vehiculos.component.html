@@ -1,8 +1,9 @@
+<app-loading *ngIf="loading" class="m-5"></app-loading>
 <div class="row">
   <div class="col">
     <p class="h1" *ngIf="!loading">VEHÍCULOS</p>
   </div>
-  <div class="card-columns m-5">
+  <div class="card-columns m-5 animated fadeIn">
     <div (click)='verVehiculo(vehiculo)' *ngFor="let vehiculo of vehiculos; let i=index" class="card">
       <div class="card-body">
         <h5 class="card-title">{{ vehiculo.name }}</h5>
