@@ -18,7 +18,7 @@ export class NavesComponent {
     this.swapi.getCall('starships/')
       .subscribe( (data: any) => {
         console.log(data);
-        this.naves = data;
+        this.naves = data['results'];
         this.loading = false;
         this.nextUrl = data['next'];
         this.previousUrl = data['previous'];
