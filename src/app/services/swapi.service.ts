@@ -15,7 +15,12 @@ export class SwapiService {
   getCall(EndPoint: string) {
     const url = `https://swapi.co/api/${ EndPoint }`;
     return this.http.get(url)
-      .pipe( map( data => data['results'] ));
+      .pipe( map( data => data ));
+  }
+
+  getNewCall(url: string) {
+    return this.http.get(url)
+      .pipe( map( data => data ));
   }
 
 }

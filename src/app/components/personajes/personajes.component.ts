@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SwapiService } from '../../services/swapi.service';
 
 @Component({
@@ -6,25 +6,52 @@ import { SwapiService } from '../../services/swapi.service';
   templateUrl: './personajes.component.html',
   styles: []
 })
-export class PersonajesComponent implements OnInit {
+export class PersonajesComponent {
 
   personajes: any[] = [];
   loading: boolean;
+  nextUrl: string;
+  previousUrl: string;
+
   constructor( private swapi: SwapiService) {
     this.loading = true;
     this.swapi.getCall('people')
       .subscribe( (data: any) => {
         console.log(data);
-        this.personajes = data;
+        this.personajes = data['results'];
         this.loading = false;
+        this.nextUrl = data['next'];
+        this.previousUrl = data['previous'];
       });
   }
 
-  verPersonaje(item: any) {
-    console.log(item);
+  nextPage() {
+    if (this.nextUrl !== '') {
+      console.log(this.nextUrl);
+      this.loading = true;
+      this.swapi.getNewCall(this.nextUrl)
+        .subscribe( (data: any) => {
+          console.log(data);
+          this.personajes = data['results'];
+          this.nextUrl = data['next'];
+          this.previousUrl = data['previous'];
+          this.loading = false;
+        });
+    }
   }
 
-  ngOnInit() {
+  previousPage() {
+    if (this.previousUrl !== '') {
+      this.loading = true;
+      this.swapi.getNewCall(this.previousUrl)
+        .subscribe( (data: any) => {
+          console.log(data);
+          this.personajes = data['results'];
+          this.nextUrl = data['next'];
+          this.previousUrl = data['previous'];
+          this.loading = false;
+        });
+    }
   }
 
 }
