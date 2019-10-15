@@ -3,17 +3,35 @@
   <div class="col">
     <p class="h1" *ngIf="!loading">VEHÍCULOS</p>
   </div>
-  <div class="card-columns m-5 animated fadeIn">
-    <div (click)='verVehiculo(vehiculo)' *ngFor="let vehiculo of vehiculos; let i=index" class="card">
+  <div *ngIf="!loading" class="card-columns m-5 animated fadeIn">
+    <div
+      *ngFor="let vehiculo of vehiculos; let i = index"
+      class="card puntero"
+    >
       <div class="card-body">
         <h5 class="card-title">{{ vehiculo.name }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Características del vehiculo</h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Características del Vehículo
+        </h6>
         <p class="card-text">
           <span>Modelo: {{ vehiculo.model }} </span><br>
           <span>Fabricado por: {{ vehiculo.manufacturer }} </span><br>
           <span>Costo en creditos: {{ vehiculo.cost_in_credits }} </span><br>
           <span>Pasajeros: {{ vehiculo.passengers }} </span>
         </p>
+        <a href="#" class="badge badge-info">Ver mas...</a>
+      </div>
+      <div class="fixed-bottom row m-5 center">
+        <div class="col">
+          <a class="float-left m-3" (click)="previousPage()">
+            <i class="fas fa-angle-double-left fa-3x alert-link"></i>
+          </a>
+        </div>
+        <div class="col">
+          <a class="float-right m-3" (click)="nextPage()">
+            <i class="fas fa-angle-double-right fa-3x"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
