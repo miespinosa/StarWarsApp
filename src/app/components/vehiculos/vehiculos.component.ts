@@ -19,7 +19,7 @@ export class VehiculosComponent implements OnInit {
       });
   }
 
-  verVehiculos(item: any) {
+  verVehiculo(item: any) {
     console.log(item);
   }
 
