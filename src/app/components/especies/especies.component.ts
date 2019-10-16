@@ -9,7 +9,7 @@ import { SwapiService } from '../../services/swapi.service';
 export class EspeciesComponent {
   [x: string]: any;
 
-  naves: any[] = [];
+  especies: any[] = [];
   loading: boolean;
   nextUrl: string;
   previousUrl: string;
