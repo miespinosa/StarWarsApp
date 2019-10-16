@@ -22,11 +22,12 @@ export class PersonajesComponent {
         this.loading = false;
         this.nextUrl = data['next'];
         this.previousUrl = data['previous'];
+        console.log(this.previousUrl);
       });
   }
 
   nextPage() {
-    if (this.nextUrl !== '') {
+    if (this.nextUrl !== '' && this.nextUrl !== null) {
       console.log(this.nextUrl);
       this.loading = true;
       this.swapi.getNewCall(this.nextUrl)
@@ -41,8 +42,9 @@ export class PersonajesComponent {
   }
 
   previousPage() {
-    if (this.previousUrl !== '') {
+    if (this.previousUrl !== '' && this.previousUrl !== null ) {
       this.loading = true;
+      console.log(this.previousUrl);
       this.swapi.getNewCall(this.previousUrl)
         .subscribe( (data: any) => {
           console.log(data);
@@ -52,6 +54,10 @@ export class PersonajesComponent {
           this.loading = false;
         });
     }
+  }
+
+  verPersonaje(personaje: any) {
+    console.log(personaje);
   }
 
 }

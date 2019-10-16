@@ -10,14 +10,15 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { PersonajesComponent } from './components/personajes/personajes.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PlanetasComponent } from './components/planetas/planetas.component';
-
-// Importar Rutas
-import { ROUTES } from './app.routes';
 import { NavesComponent } from './components/naves/naves.component';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { EspeciesComponent } from './components/especies/especies.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { SearchComponent } from './components/shared/search/search.component';
+import { PersonajeComponent } from './components/personaje/personaje.component';
+// Importar Rutas
+import { ROUTES } from './app.routes';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SearchComponent } from './components/shared/search/search.component';
     VehiculosComponent,
     EspeciesComponent,
     LoadingComponent,
-    SearchComponent
+    SearchComponent,
+    PersonajeComponent
   ],
   imports: [
     BrowserModule,

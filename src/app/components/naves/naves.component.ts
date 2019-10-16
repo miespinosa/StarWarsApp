@@ -26,7 +26,7 @@ export class NavesComponent {
   }
 
   nextPage() {
-    if (this.nextUrl !== '') {
+    if (this.nextUrl !== '' && this.nextUrl !== null) {
       console.log(this.nextUrl);
       this.loading = true;
       this.swapi.getNewCall(this.nextUrl)
@@ -41,7 +41,7 @@ export class NavesComponent {
   }
 
   previousPage() {
-    if (this.previousUrl !== '') {
+    if (this.previousUrl !== '' && this.previousUrl !== null) {
       this.loading = true;
       this.swapi.getNewCall(this.previousUrl)
         .subscribe( (data: any) => {
