@@ -70,6 +70,10 @@ hr {
     animation-name: fadeIn;
 }
 
+.badge-info{
+    color: #fff !important;
+}
+
 @media (min-width: 1200px){
     .container {
         max-width: 95% !important;

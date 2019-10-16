@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SwapiService } from '../../services/swapi.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-personajes',
@@ -13,7 +15,7 @@ export class PersonajesComponent {
   nextUrl: string;
   previousUrl: string;
 
-  constructor( private swapi: SwapiService) {
+  constructor( private swapi: SwapiService, private router: Router) {
     this.loading = true;
     this.swapi.getCall('people')
       .subscribe( (data: any) => {
@@ -58,6 +60,7 @@ export class PersonajesComponent {
 
   verPersonaje(personaje: any) {
     console.log(personaje);
+    this.router.navigate(['/people'], {state: {data: personaje}});
   }
 
 }
